@@ -1,14 +1,27 @@
 <?php
+
 /*
-Plugin Name: Gallery CMS
-Plugin URI: http://lab.adasha.com/stilltocome
-Description: Adds profile, collective, work and exhibition post types, & group and medium taxonomies. There is a lot still to do.
-Version: 0.1a
-Author: Adam Shailer
-Author URI: http://adasha.com
-Textdomain: gallerycms
-License: GPLv2
-*/
+ * setup
+ */
+
+
+add_action( 'init', 'gallerycms_init');
+add_action( 'add_meta_boxes', 'gallerycms_add_meta' );
+
+
+
+
+function gallerycms_init()
+{
+    gallerycms_register_post_types();
+    gallerycms_register_taxonomies();
+}
+
+function gallerycms_add_meta()
+{
+    gallerycms_add_metaboxes();
+}
+
 
 
 
@@ -101,23 +114,23 @@ function gallerycms_register_post_types()
 
 
 
-    $exhibitlabels = array(
-        'name'               => __( 'Exhibits', 'gallerycms' ),
-        'singular_name'      => __( 'Exhibit', 'gallerycms' ),
-        'add_new'            => __( 'New Exhibit', 'gallerycms' ),
-        'add_new_item'       => __( 'Add New Exhibit', 'gallerycms' ),
-        'edit_item'          => __( 'Edit Exhibit', 'gallerycms' ),
-        'item_updated'       => __( 'Exhibit updated', 'gallerycms' ),
-        'new_item'           => __( 'New Exhibit', 'gallerycms' ),
-        'all_items'          => __( 'All Exhibits', 'gallerycms' ),
-        'view_item'          => __( 'View Exhibit', 'gallerycms' ),
-        'view_items'         => __( 'View Exhibits', 'gallerycms' ),
-        'search_items'       => __( 'Search Exhibits', 'gallerycms' ),
-        'not_found'          => __( 'No Exhibits found', 'gallerycms' ),
-        'not_found_in_trash' => __( 'No Exhibits found in Trash', 'gallerycms' ),
+    $collectionlabels = array(
+        'name'               => __( 'Collections', 'gallerycms' ),
+        'singular_name'      => __( 'Collection', 'gallerycms' ),
+        'add_new'            => __( 'New Collection', 'gallerycms' ),
+        'add_new_item'       => __( 'Add New Collection', 'gallerycms' ),
+        'edit_item'          => __( 'Edit Collection', 'gallerycms' ),
+        'item_updated'       => __( 'Collection updated', 'gallerycms' ),
+        'new_item'           => __( 'New Collection', 'gallerycms' ),
+        'all_items'          => __( 'All Collections', 'gallerycms' ),
+        'view_item'          => __( 'View Collection', 'gallerycms' ),
+        'view_items'         => __( 'View Collections', 'gallerycms' ),
+        'search_items'       => __( 'Search Collections', 'gallerycms' ),
+        'not_found'          => __( 'No Collections found', 'gallerycms' ),
+        'not_found_in_trash' => __( 'No Collections found in Trash', 'gallerycms' ),
     );
-    $exhibitargs = array(
-        'labels'       => $exhibitlabels,
+    $collectionargs = array(
+        'labels'       => $collectionlabels,
         'menu_icon'    => 'dashicons-layout',
         'has_archive'  => true,
         'public'       => true,
@@ -133,11 +146,11 @@ function gallerycms_register_post_types()
             'page-attributes',
             'post-formats'
         ),
-        'rewrite' => array( 'slug' => 'exhibit' ),
+        'rewrite' => array( 'slug' => 'collection' ),
         'show_in_rest' => true
     );
 
-    register_post_type( 'gallerycms_exhibit', $exhibitargs );
+    register_post_type( 'gallerycms_exhibit', $collectionargs );
 }
 
 
@@ -149,6 +162,34 @@ function gallerycms_register_post_types()
 
 function gallerycms_register_taxonomies()
 {
+
+
+    $catlabels = array(
+        'name'              => _x( 'Categories', 'taxonomy general name', 'gallerycms' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name', 'gallerycms' ),
+        'search_items'      => __( 'Search Categories', 'gallerycms' ),
+        'all_items'         => __( 'All Categories', 'gallerycms' ),
+        'parent_item'       => __( 'Parent Category', 'gallerycms' ),
+        'parent_item_colon' => __( 'Parent Category:', 'gallerycms' ),
+        'edit_item'         => __( 'Edit Category', 'gallerycms' ),
+        'update_item'       => __( 'Update Category', 'gallerycms' ),
+        'add_new_item'      => __( 'Add new Category', 'gallerycms' ),
+        'new_item_name'     => __( 'New Category name', 'gallerycms' ),
+        'menu_name'         => __( 'Category', 'gallerycms' ),
+    );
+    $catargs = array(
+        'hierarchical'      => true,
+        'labels'            => $catlabels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => [ 'slug' => 'category' ],
+        'show_in_rest'      => true
+    );
+
+    register_taxonomy( 'gallerycms_category', [ 'gallerycms_profile', 'gallerycms_work', 'gallerycms_collection' ], $catargs );
+
+
 
 
     $grouplabels = array(
@@ -174,7 +215,7 @@ function gallerycms_register_taxonomies()
         'show_in_rest'      => true
     );
 
-    register_taxonomy( 'gallerycms_group', [ 'gallerycms_profile', 'gallerycms_exhibit' ], $groupargs );
+    register_taxonomy( 'gallerycms_group', [ 'gallerycms_profile', 'gallerycms_exhibit', 'gallerycms_collection' ], $groupargs );
 
 
 
@@ -217,8 +258,8 @@ function gallerycms_add_metaboxes()
 {
     add_meta_box( 'gallerycms_work_meta', 'Meta', 'gallerycms_work_meta_callback', [ 'gallerycms_work' ], 'side', 'high' );
 
-    add_meta_box( 'gallerycms_exhibit_info', 'Exhibit info', 'gallerycms_exhibit_info_callback', [ 'gallerycms_exhibit' ], 'side', 'high' );
-    add_meta_box( 'gallerycms_exhibit_contributors', 'Featured Profiles', 'gallerycms_exhibit_contributors_callback', [ 'gallerycms_exhibit' ], 'normal' );
+    add_meta_box( 'gallerycms_collection_info', 'Collection info', 'gallerycms_collection_info_callback', [ 'gallerycms_exhibit', 'gallerycms_collection' ], 'side', 'high' );
+    add_meta_box( 'gallerycms_collection_contributors', 'Featured Profiles', 'gallerycms_collection_contributors_callback', [ 'gallerycms_exhibit', 'gallerycms_collection' ], 'normal' );
 }
 
 
@@ -242,7 +283,7 @@ function gallerycms_work_meta_callback( $post )
         <label for="gallerycms-num-year">Year:</label>
         <input name="gallerycms-num-year" id="gallerycms-num-year" type="number" step="1" value="2000" max="9999">
         <br>
-        <label for="gallerycms-txt-location">Location:</label><br>
+        <label for="gallerycms-txt-location">Location of origin:</label><br>
         <input name="gallerycms-txt-location" id="gallerycms-txt-location" type="text">
     </p>
     <p>
@@ -261,7 +302,8 @@ function gallerycms_work_meta_callback( $post )
 
 
 
-function gallerycms_exhibit_info_callback( $post )
+
+function gallerycms_collection_info_callback( $post )
 {
     ?>
     <p>
@@ -281,31 +323,13 @@ function gallerycms_exhibit_info_callback( $post )
     <?php
 }
 
-function gallerycms_exhibit_contributors_callback( $post )
+
+
+
+
+function gallerycms_collection_contributors_callback( $post )
 {
     ?>
     <p>To add names of contributing artists.</p>
     <?php
 }
-
-
-
-
-
-
-
-function gallerycms_init()
-{
-    gallerycms_register_post_types();
-    gallerycms_register_taxonomies();
-}
-
-function gallerycms_add_meta()
-{
-    gallerycms_add_metaboxes();
-}
-
-
-add_action( 'init', 'gallerycms_init');
-add_action( 'add_meta_boxes', 'gallerycms_add_meta' );
-?>
