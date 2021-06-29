@@ -1,11 +1,11 @@
 <?php
 
 /*
- * setup
+ * Gallery CMS - Define datatypes (- custom page types, taxonomies & metaboxes).
  */
 
 
-add_action( 'init', 'gallerycms_init');
+add_action( 'init', 'gallerycms_init' );
 add_action( 'add_meta_boxes', 'gallerycms_add_meta' );
 
 
