@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Gallery CMS
-Plugin URI: http://lab.adasha.com/stilltocome
+Plugin URI: http://lab.adasha.com/plugins/wp-gallery-cms
 Description: Adds custom post types, taxonomies and metaboxes to suit a gallery or other exhibitor. There is a lot still to do.
 Version: 0.1.2a
 Author: Adam Shailer
@@ -11,9 +11,9 @@ Textdomain: gallerycms
 License: GPLv2
 */
 
-
-require_once plugin_dir_path(__FILE__) . 'includes/gallerycms-datatypes.php';
-require_once plugin_dir_path(__FILE__) . 'includes/gallerycms-adminpage.php';
+$file = plugin_dir_path(__FILE__);
+require_once $file . 'includes/gallerycms-datatypes.php';
+require_once $file . 'includes/gallerycms-adminpage.php';
 
 
 
