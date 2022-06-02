@@ -196,10 +196,10 @@ function artcms_register_taxonomies()
 
 
     $typelabels = array(
-        'name'              => _x( 'Type', 'taxonomy general name', 'artcms' ),
+        'name'              => _x( 'Types', 'taxonomy general name', 'artcms' ),
         'singular_name'     => _x( 'Type', 'taxonomy singular name', 'artcms' ),
-        'search_items'      => __( 'Search Type', 'artcms' ),
-        'all_items'         => __( 'All Type', 'artcms' ),
+        'search_items'      => __( 'Search Types', 'artcms' ),
+        'all_items'         => __( 'All Types', 'artcms' ),
         'parent_item'       => __( 'Parent Type', 'artcms' ),
         'parent_item_colon' => __( 'Parent Type:', 'artcms' ),
         'edit_item'         => __( 'Edit Type', 'artcms' ),
@@ -219,6 +219,35 @@ function artcms_register_taxonomies()
     );
 
     register_taxonomy( 'artcms_type', [ 'artcms_work' ], $typeargs );
+
+
+
+
+    $labellabels = array(
+        'name'              => _x( 'Labels', 'taxonomy general name', 'artcms' ),
+        'singular_name'     => _x( 'Label', 'taxonomy singular name', 'artcms' ),
+        'search_items'      => __( 'Search Labels', 'artcms' ),
+        'all_items'         => __( 'All Labels', 'artcms' ),
+        'parent_item'       => __( 'Parent Label', 'artcms' ),
+        'parent_item_colon' => __( 'Parent Label:', 'artcms' ),
+        'edit_item'         => __( 'Edit Label', 'artcms' ),
+        'update_item'       => __( 'Update Label', 'artcms' ),
+        'add_new_item'      => __( 'Add new Label', 'artcms' ),
+        'new_item_name'     => __( 'New Label name', 'artcms' ),
+        'menu_name'         => __( 'Label', 'artcms' ),
+    );
+    $labelargs = array(
+        'hierarchical'      => false,
+        'labels'            => $labellabels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => [ 'slug' => 'label' ],
+        'show_in_rest'      => true
+    );
+
+    register_taxonomy( 'artcms_type', [ 'artcms_work' ], $labelargs );
+   
 
 }
 
