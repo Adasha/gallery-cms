@@ -208,7 +208,7 @@ function artcms_register_taxonomies()
         'new_item_name'     => __( 'New Type name', 'artcms' ),
         'menu_name'         => __( 'Type', 'artcms' ),
     );
-    $mediumargs = array(
+    $typeargs = array(
         'hierarchical'      => true,
         'labels'            => $typelabels,
         'show_ui'           => true,
