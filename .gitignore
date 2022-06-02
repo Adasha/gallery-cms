@@ -25,6 +25,5 @@ node_modules/
 
 # dotenv environment variables file
 .env
-plugins/art-cms/includes/artcms-datatypes.php
 plugins/.DS_Store
 .DS_Store
