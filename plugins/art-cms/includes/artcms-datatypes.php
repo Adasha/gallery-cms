@@ -260,7 +260,7 @@ function artcms_register_taxonomies()
 
 function artcms_add_metaboxes()
 {
-    add_meta_box( 'artcms_profile_details', 'Details', 'artcms_profile_details_callback', [ 'artcms_profile' ], 'normal' );
+    add_meta_box( 'artcms_profile_details', 'Details', 'artcms_profile_details_callback', [ 'artcms_profile' ], 'side', 'high' );
 
     add_meta_box( 'artcms_work_meta', 'Meta', 'artcms_work_meta_callback', [ 'artcms_work' ], 'side', 'high' );
 
@@ -274,19 +274,28 @@ function artcms_profile_details_callback( $post )
 {
     ?>
 
-    <p>
-        <label for="artcms-profile-nationality">Nationality:</label>
-        <input name="artcms-profile-nationality" id="artcms-profile-nationality" type="text">
-        <br>
-        <label for="artcms-profile-birthyear">Born:</label>
-        <input name="artcms-profile-birthyear" id="artcms-profile-birthyear" type="number" step="1" min="-9999" max="9999">
-        
-        <label for="artcms-profile-deathyear">Died:</label>
-        <input name="artcms-profile-deathyear" id="artcms-profile-deathyear" type="number" step="1" min="-9999" max="9999">
-        <br>
-        <label for="artcms-profile-website">Website:</label>
-        <input name="artcms-profile-website" id="artcms-profile-website" type="url">
-    </p>
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="4"><label for="artcms-profile-nationality">Nationality:</label></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input name="artcms-profile-nationality" id="artcms-profile-nationality" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="artcms-profile-birthyear">Born:</label></td>
+                <td><input name="artcms-profile-birthyear" id="artcms-profile-birthyear" type="number" step="1" min="-9999" max="9999"></td>
+                <td><label for="artcms-profile-deathyear">Died:</label></td>
+                <td><input name="artcms-profile-deathyear" id="artcms-profile-deathyear" type="number" step="1" min="-9999" max="9999"></td>
+            </tr>
+            <tr>
+                <td colspan="4"><label for="artcms-profile-website">Website:</label></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input name="artcms-profile-website" id="artcms-profile-website" type="url"></td>
+            </tr>
+        </tbody>
+    </table>
 
     <?php
 }
@@ -296,38 +305,72 @@ function artcms_work_meta_callback( $post )
 {
     ?>
 
-    <p>
-        <label for="artcms-work-title">Title of piece:</label><br>
-        <input name="artcms-work-title" id="artcms-work-title" type="text">
-        <br>
-        <label for="artcms-work-creator">Creator's name:</label><br>
-        <input name="artcms-work-creator" id="artcms-work-creator" type="text">
-        <br>
-        <label for="artcms-work-creatorprofile">Profile page:</label>
-        <input name="artcms-work-creatorprofile" id="artcms-work-creatorprofile" type="url">
-    </p>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="artcms-work-title">Title of piece:</label></td>
+            </tr>
+            <tr>
+                <td><input name="artcms-work-title" id="artcms-work-title" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="artcms-work-creator">Creator's name:</label></td>
+            </tr>
+            <tr>
+                <td><input name="artcms-work-creator" id="artcms-work-creator" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="artcms-work-creatorprofile">Profile page:</label></td>
+            </tr>
+            <tr>
+                <td><input name="artcms-work-creatorprofile" id="artcms-work-creatorprofile" type="url"></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <p>
-        <label for="artcms-work-year">Year:</label>
-        <input name="artcms-work-year" id="artcms-work-year" type="number" step="1" min="-9999" max="9999">
-        <br>
-        <label for="artcms-work-location">Location of origin:</label><br>
-        <input name="artcms-work-location" id="artcms-work-location" type="text">
-    </p>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="artcms-work-year">Year:</label></td>
+                <td><input name="artcms-work-year" id="artcms-work-year" type="number" step="1" min="-9999" max="9999"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="artcms-work-location">Location of origin:</label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input name="artcms-work-location" id="artcms-work-location" type="text"></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <p>
-        <label for="artcms-work-genre">Genre:</label><br>
-        <input name="artcms-work-genre" id="artcms-work-genre" type="text">
-        <br>
-        <label for="artcms-work-medium">Medium:</label><br>
-        <input name="artcms-work-medium" id="artcms-work-medium" type="text">
-        <br>
-        <label for="artcms-work-size">Dimensions:</label><br>
-        <input name="artcms-work-size" id="artcms-work-size" type="text">
-        <br>
-        <label for="artcms-work-duration">Duration:</label><br>
-        <input name="artcms-work-duration" id="artcms-work-duration" type="text">
-    </p>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="artcms-work-genre">Genre:</label></td>
+            </tr>
+            <tr>
+                <td><input name="artcms-work-genre" id="artcms-work-genre" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="artcms-work-medium">Medium:</label></td>
+            </tr>
+            <tr>
+                <td><input name="artcms-work-medium" id="artcms-work-medium" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="artcms-work-size">Dimensions:</label></td>
+            </tr>
+            <tr>
+                <td><input name="artcms-work-size" id="artcms-work-size" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="artcms-work-duration">Duration:</label></td>
+            </tr>
+            <tr>
+                <td><input name="artcms-work-duration" id="artcms-work-duration" type="text"></td>
+            </tr>
+        </tbody>
+    </table>
 
     <?php
 }
@@ -339,20 +382,35 @@ function artcms_work_meta_callback( $post )
 function artcms_collection_info_callback( $post )
 {
     ?>
-    <p>
-        <label for="artcms-collection-datestart">Opening date:</label>
-        <input name="artcms-collection-datestart" id="artcms-collection-datestart" type="date">
-        <br>
-        <label for="artcms-collection-dateend">Closing date:</label>
-        <input name="artcms-collection-dateend" id="artcms-collection-dateend" type="date">
-    </p>
-    <p>
-        <label for="artcms-collection-location">Location:</label><br>
-        <input name="artcms-collection-location" id="artcms-collection-location" type="text">
-        <br>
-        <label for="artcms-collection-link">Web site:</label><br>
-        <input name="artcms-collection-link" id="artcms-collection-link" type="url">
-    </p>
+
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="2">Opening dates:</td>
+            </tr>
+            <tr>
+                <td><label for="artcms-collection-datestart">From</label></td>
+                <td><input name="artcms-collection-datestart" id="artcms-collection-datestart" type="date"></td>
+            </tr>
+            <tr>
+                <td><label for="artcms-collection-dateend">to</label></td>
+                <td><input name="artcms-collection-dateend" id="artcms-collection-dateend" type="date"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="artcms-collection-location">Location:</label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input name="artcms-collection-location" id="artcms-collection-location" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="artcms-collection-link">Web site:</label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input name="artcms-collection-link" id="artcms-collection-link" type="url"></td>
+            </tr>
+        </tbody>
+    </table>
+    
     <?php
 }
 
