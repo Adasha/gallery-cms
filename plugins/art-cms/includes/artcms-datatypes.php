@@ -178,7 +178,7 @@ function artcms_register_taxonomies()
         'update_item'       => __( 'Update Group', 'artcms' ),
         'add_new_item'      => __( 'Add new Group', 'artcms' ),
         'new_item_name'     => __( 'New Group name', 'artcms' ),
-        'menu_name'         => __( 'Group', 'artcms' ),
+        'menu_name'         => __( 'Groups', 'artcms' ),
     );
     $groupargs = array(
         'hierarchical'      => true,
@@ -206,7 +206,7 @@ function artcms_register_taxonomies()
         'update_item'       => __( 'Update Type', 'artcms' ),
         'add_new_item'      => __( 'Add new Type', 'artcms' ),
         'new_item_name'     => __( 'New Type name', 'artcms' ),
-        'menu_name'         => __( 'Type', 'artcms' ),
+        'menu_name'         => __( 'Types', 'artcms' ),
     );
     $typeargs = array(
         'hierarchical'      => true,
@@ -234,7 +234,7 @@ function artcms_register_taxonomies()
         'update_item'       => __( 'Update Label', 'artcms' ),
         'add_new_item'      => __( 'Add new Label', 'artcms' ),
         'new_item_name'     => __( 'New Label name', 'artcms' ),
-        'menu_name'         => __( 'Label', 'artcms' ),
+        'menu_name'         => __( 'Labels', 'artcms' ),
     );
     $labelargs = array(
         'hierarchical'      => false,
@@ -246,7 +246,7 @@ function artcms_register_taxonomies()
         'show_in_rest'      => true
     );
 
-    register_taxonomy( 'artcms_label', [ 'artcms_work' ], $labelargs );
+    register_taxonomy( 'artcms_label', [ 'artcms_work', 'artcms_collection' ], $labelargs );
    
 
 }
