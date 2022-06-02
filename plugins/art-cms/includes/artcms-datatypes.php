@@ -275,7 +275,17 @@ function artcms_profile_details_callback( $post )
     ?>
 
     <p>
-        <label for=""></label>
+        <label for="artcms-profile-nationality"></label><br>
+        <input name="artcms-profile-nationality" id="artcms-profile-nationality" type="text">
+        <br>
+        <label for="artcms-profile-birthyear"></label><br>
+        <input name="artcms-profile-birthyear" id="artcms-profile-birthyear" type="number" step="1" min="-9999" max="9999">
+        <br>
+        <label for="artcms-profile-deathyear"></label><br>
+        <input name="artcms-profile-deathyear" id="artcms-profile-deathyear" type="number" step="1" min="-9999" max="9999">
+        <br>
+        <label for="artcms-profile-website">Website:</label>
+        <input name="artcms-profile-website" id="artcms-profile-website" type="url">
     </p>
 
     <?php
@@ -299,7 +309,7 @@ function artcms_work_meta_callback( $post )
 
     <p>
         <label for="artcms-work-year">Year:</label>
-        <input name="artcms-work-year" id="artcms-work-year" type="number" step="1" max="9999">
+        <input name="artcms-work-year" id="artcms-work-year" type="number" step="1" min="-9999" max="9999">
         <br>
         <label for="artcms-work-location">Location of origin:</label><br>
         <input name="artcms-work-location" id="artcms-work-location" type="text">
