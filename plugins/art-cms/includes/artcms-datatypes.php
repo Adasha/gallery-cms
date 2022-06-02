@@ -5,9 +5,10 @@
  */
 
 
+ 
 add_action( 'init', 'artcms_init' );
 add_action( 'add_meta_boxes', 'artcms_add_meta' );
-
+add_action( 'save_post', 'artcms_save_meta' );
 
 
 
@@ -18,10 +19,31 @@ function artcms_init()
     // add column sorting?
 }
 
+
+
+
+
+
+
+
 function artcms_add_meta()
 {
-    artcms_add_metaboxes();
+
+    add_meta_box( 'artcms_profile_details', 'Details', 'artcms_profile_details_callback', [ 'artcms_profile' ], 'side', 'high' );
+
+    add_meta_box( 'artcms_work_meta', 'Meta', 'artcms_work_meta_callback', [ 'artcms_work' ], 'side', 'high' );
+
+    add_meta_box( 'artcms_collection_info', 'Collection info', 'artcms_collection_info_callback', [ 'artcms_collection' ], 'side', 'high' );
+    add_meta_box( 'artcms_collection_contributors', 'Featured Profiles', 'artcms_collection_contributors_callback', [ 'artcms_collection' ], 'normal' );
+
 }
+
+
+function artcms_save_meta()
+{
+
+}
+
 
 
 
@@ -75,6 +97,7 @@ function artcms_register_post_types()
 
 
 
+
     $worklabels = array(
         'name'               => __( 'Works', 'artcms' ),
         'singular_name'      => __( 'Work', 'artcms' ),
@@ -112,6 +135,7 @@ function artcms_register_post_types()
     );
 
     register_post_type( 'artcms_work', $workargs );
+
 
 
 
@@ -154,6 +178,7 @@ function artcms_register_post_types()
 
     register_post_type( 'artcms_collection', $collectionargs );
 
+
 }
 
 
@@ -195,6 +220,7 @@ function artcms_register_taxonomies()
 
 
 
+
     $typelabels = array(
         'name'              => _x( 'Types', 'taxonomy general name', 'artcms' ),
         'singular_name'     => _x( 'Type', 'taxonomy singular name', 'artcms' ),
@@ -219,6 +245,7 @@ function artcms_register_taxonomies()
     );
 
     register_taxonomy( 'artcms_type', [ 'artcms_work' ], $typeargs );
+
 
 
 
@@ -258,21 +285,10 @@ function artcms_register_taxonomies()
 
 
 
-function artcms_add_metaboxes()
-{
-    add_meta_box( 'artcms_profile_details', 'Details', 'artcms_profile_details_callback', [ 'artcms_profile' ], 'side', 'high' );
-
-    add_meta_box( 'artcms_work_meta', 'Meta', 'artcms_work_meta_callback', [ 'artcms_work' ], 'side', 'high' );
-
-    add_meta_box( 'artcms_collection_info', 'Collection info', 'artcms_collection_info_callback', [ 'artcms_collection' ], 'side', 'high' );
-    add_meta_box( 'artcms_collection_contributors', 'Featured Profiles', 'artcms_collection_contributors_callback', [ 'artcms_collection' ], 'normal' );
-}
-
-
-
 function artcms_profile_details_callback( $post )
 {
     ?>
+
 
     <table>
         <tbody>
@@ -297,13 +313,18 @@ function artcms_profile_details_callback( $post )
         </tbody>
     </table>
 
+
     <?php
 }
+
+
+
 
 
 function artcms_work_meta_callback( $post )
 {
     ?>
+
 
     <table>
         <tbody>
@@ -328,6 +349,7 @@ function artcms_work_meta_callback( $post )
         </tbody>
     </table>
 
+
     <table>
         <tbody>
             <tr>
@@ -342,6 +364,7 @@ function artcms_work_meta_callback( $post )
             </tr>
         </tbody>
     </table>
+
 
     <table>
         <tbody>
@@ -372,6 +395,7 @@ function artcms_work_meta_callback( $post )
         </tbody>
     </table>
 
+
     <?php
 }
 
@@ -382,6 +406,7 @@ function artcms_work_meta_callback( $post )
 function artcms_collection_info_callback( $post )
 {
     ?>
+
 
     <table>
         <tbody>
@@ -411,6 +436,7 @@ function artcms_collection_info_callback( $post )
         </tbody>
     </table>
     
+
     <?php
 }
 
@@ -421,6 +447,10 @@ function artcms_collection_info_callback( $post )
 function artcms_collection_contributors_callback( $post )
 {
     ?>
+
+
     <p>To add names of contributing artists.</p>
+
+
     <?php
 }
