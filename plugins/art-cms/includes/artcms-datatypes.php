@@ -275,13 +275,13 @@ function artcms_profile_details_callback( $post )
     ?>
 
     <p>
-        <label for="artcms-profile-nationality"></label><br>
+        <label for="artcms-profile-nationality">Nationality:</label>
         <input name="artcms-profile-nationality" id="artcms-profile-nationality" type="text">
         <br>
-        <label for="artcms-profile-birthyear"></label><br>
+        <label for="artcms-profile-birthyear">Born:</label>
         <input name="artcms-profile-birthyear" id="artcms-profile-birthyear" type="number" step="1" min="-9999" max="9999">
-        <br>
-        <label for="artcms-profile-deathyear"></label><br>
+        
+        <label for="artcms-profile-deathyear">Died:</label>
         <input name="artcms-profile-deathyear" id="artcms-profile-deathyear" type="number" step="1" min="-9999" max="9999">
         <br>
         <label for="artcms-profile-website">Website:</label>
