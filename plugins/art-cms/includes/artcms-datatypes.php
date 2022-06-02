@@ -287,36 +287,36 @@ function artcms_work_meta_callback( $post )
     ?>
 
     <p>
-        <label for="artcms-txt-title">Title of piece:</label><br>
-        <input name="artcms-txt-title" id="artcms-txt-title" type="text">
+        <label for="artcms-work-title">Title of piece:</label><br>
+        <input name="artcms-work-title" id="artcms-work-title" type="text">
         <br>
-        <label for="artcms-txt-artist">Artist's name:</label><br>
-        <input name="artcms-txt-artist" id="artcms-txt-artist" type="text">
+        <label for="artcms-work-creator">Creator's name:</label><br>
+        <input name="artcms-work-creator" id="artcms-work-creator" type="text">
         <br>
-        <label for="artcms-url-profile">Profile page:</label>
-        <input name="artcms-url-profile" id="artcms-url-profile" type="url">
+        <label for="artcms-work-creatorprofile">Profile page:</label>
+        <input name="artcms-work-creatorprofile" id="artcms-work-creatorprofile" type="url">
     </p>
 
     <p>
-        <label for="artcms-num-year">Year:</label>
-        <input name="artcms-num-year" id="artcms-num-year" type="number" step="1" value="2000" max="9999">
+        <label for="artcms-work-year">Year:</label>
+        <input name="artcms-work-year" id="artcms-work-year" type="number" step="1" max="9999">
         <br>
-        <label for="artcms-txt-location">Location of origin:</label><br>
-        <input name="artcms-txt-location" id="artcms-txt-location" type="text">
+        <label for="artcms-work-location">Location of origin:</label><br>
+        <input name="artcms-work-location" id="artcms-work-location" type="text">
     </p>
 
     <p>
-        <label for="artcms-txt-genre">Genre:</label><br>
-        <input name="artcms-txt-genre" id="artcms-txt-genre" type="text">
+        <label for="artcms-work-genre">Genre:</label><br>
+        <input name="artcms-work-genre" id="artcms-work-genre" type="text">
         <br>
-        <label for="artcms-txt-medium">Medium:</label><br>
-        <input name="artcms-txt-medium" id="artcms-txt-medium" type="text">
+        <label for="artcms-work-medium">Medium:</label><br>
+        <input name="artcms-work-medium" id="artcms-work-medium" type="text">
         <br>
-        <label for="artcms-txt-size">Dimensions:</label><br>
-        <input name="artcms-txt-size" id="artcms-txt-size" type="text">
+        <label for="artcms-work-size">Dimensions:</label><br>
+        <input name="artcms-work-size" id="artcms-work-size" type="text">
         <br>
-        <label for="artcms-txt-duration">Duration:</label><br>
-        <input name="artcms-txt-duration" id="artcms-txt-duration" type="text">
+        <label for="artcms-work-duration">Duration:</label><br>
+        <input name="artcms-work-duration" id="artcms-work-duration" type="text">
     </p>
 
     <?php
@@ -330,18 +330,18 @@ function artcms_collection_info_callback( $post )
 {
     ?>
     <p>
-        <label for="artcms-date-start">Opening date:</label>
-        <input name="artcms-date-start" id="artcms-date-start" type="date">
+        <label for="artcms-collection-datestart">Opening date:</label>
+        <input name="artcms-collection-datestart" id="artcms-collection-datestart" type="date">
         <br>
-        <label for="artcms-date-end">Closing date:</label>
-        <input name="artcms-date-end" id="artcms-date-end" type="date">
+        <label for="artcms-collection-dateend">Closing date:</label>
+        <input name="artcms-collection-dateend" id="artcms-collection-dateend" type="date">
     </p>
     <p>
-        <label for="artcms-txt-location">Location:</label><br>
-        <input name="artcms-txt-location" id="artcms-txt-location" type="text">
+        <label for="artcms-collection-location">Location:</label><br>
+        <input name="artcms-collection-location" id="artcms-collection-location" type="text">
         <br>
-        <label for="artcms-url-link">Web site:</label><br>
-        <input name="artcms-url-link" id="artcms-url-link" type="url">
+        <label for="artcms-collection-link">Web site:</label><br>
+        <input name="artcms-collection-link" id="artcms-collection-link" type="url">
     </p>
     <?php
 }
