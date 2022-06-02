@@ -246,7 +246,7 @@ function artcms_register_taxonomies()
         'show_in_rest'      => true
     );
 
-    register_taxonomy( 'artcms_type', [ 'artcms_work' ], $labelargs );
+    register_taxonomy( 'artcms_label', [ 'artcms_work' ], $labelargs );
    
 
 }
