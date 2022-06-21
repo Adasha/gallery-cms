@@ -5,7 +5,7 @@
  */
 
 
- 
+
 add_action( 'init', 'artcms_init' );
 add_action( 'add_meta_boxes', 'artcms_add_meta' );
 add_action( 'save_post', 'artcms_save_meta' );
@@ -29,17 +29,53 @@ function artcms_init()
 function artcms_add_meta()
 {
 
-    add_meta_box( 'artcms_profile_details', 'Details', 'artcms_profile_details_callback', [ 'artcms_profile' ], 'side', 'high' );
 
-    add_meta_box( 'artcms_work_meta', 'Meta', 'artcms_work_meta_callback', [ 'artcms_work' ], 'side', 'high' );
+    add_meta_box( 
+        'artcms_profile_details', 
+        'Details', 
+        'artcms_profile_details_callback', 
+        [ 'artcms_profile' ], 
+        'side', 
+        'high' 
+    );
 
-    add_meta_box( 'artcms_collection_info', 'Collection info', 'artcms_collection_info_callback', [ 'artcms_collection' ], 'side', 'high' );
-    add_meta_box( 'artcms_collection_contributors', 'Featured Profiles', 'artcms_collection_contributors_callback', [ 'artcms_collection' ], 'normal' );
+
+
+    add_meta_box( 
+        'artcms_work_meta', 
+        'Meta', 
+        'artcms_work_meta_callback', 
+        [ 'artcms_work' ], 
+        'side', 
+        'high' 
+    );
+
+
+
+    add_meta_box( 
+        'artcms_collection_info', 
+        'Collection info', 
+        'artcms_collection_info_callback', 
+        [ 'artcms_collection' ], 
+        'side', 
+        'high' 
+    );
+    add_meta_box( 
+        'artcms_collection_contributors', 
+        'Featured Profiles', 
+        'artcms_collection_contributors_callback', 
+        [ 'artcms_collection' ], 
+        'normal' 
+    );
+
 
 }
 
 
-function artcms_save_meta()
+
+
+
+function artcms_save_meta( $post )
 {
 
 }

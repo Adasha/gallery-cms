@@ -1,0 +1,57 @@
+/*
+Theme Name: Gallery Child
+Theme URI: http://lab.adasha.com/notyet
+Author: Adasha
+Author URI: http://adasha.com
+Description: Extend any parent theme with art-cms extras. Make sure to update the template name to match your theme. 
+Version: 0.1a
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: eclecticon
+Text Domain: art_theme
+*/
+
+
+
+*.wp-block-social-links
+{
+	margin-top: 0;
+}
+
+*.mfp-title a
+{
+	color: #fff;
+}
+
+*.add-padding
+{
+	padding: 1em;
+}
+
+*.no-bullet
+{
+	list-type-style: none;
+}
+
+*.pull-up
+{
+	margin-bottom: 0;
+}
+
+*.no-para-spacing p
+{
+	margin-bottom: 0;
+}
+
+main article.category-news + article.category-news
+{
+	border-top: 1px dotted black;
+	padding-top: 50px
+}
+*.profile-block
+{
+	padding: 1em;
+	height: 100%;
+	background-color: #fafafa;
+	border: none;
+}
