@@ -13,11 +13,6 @@ Text Domain: art_theme
 
 
 
-*.wp-block-social-links
-{
-	margin-top: 0;
-}
-
 *.mfp-title a
 {
 	color: #fff;
@@ -43,15 +38,165 @@ Text Domain: art_theme
 	margin-bottom: 0;
 }
 
+*.section-spacer
+{
+	height: 20px;
+}
+
 main article.category-news + article.category-news
 {
 	border-top: 1px dotted black;
-	padding-top: 50px
+	padding-top: 50px;
 }
-*.profile-block
+
+p.item-title
+{
+	background-color: white;
+	width: min-content;
+	padding: 5px;
+}
+p.item-title[style*="#000000"]
+{
+	background-color: white;
+}
+p.item-title[style*="#ffffff"]
+{
+	background-color: black;
+}
+
+
+
+/*
+ * PODS TEMPLATE STYLES
+ */
+*.taxonomy-list
+{
+	margin-top: 0.2em;
+	line-height: 2;
+}
+*.taxonomy-list > span
+{
+	background-color: #eee;
+	margin-right: 8px;
+	padding: 6px 8px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 8pt;
+	color: #828282;
+	text-transform: uppercase;
+}
+*.taxonomy-list > span > a
+{
+	color: inherit;
+	text-decoration: none;
+	margin-top: -6px -8px;
+	transition: color 0.18s ease;
+}
+*.taxonomy-list > span > a:hover
+{
+	color: #252525;
+}
+
+
+*.body-content
+{
+	display: flex;
+	align-items: flex-start;
+	align-content: space-between;
+	column-gap: 5%;
+	clear: left;
+}
+@media screen and (max-width: 640px)
+{
+	*.body-content
+	{
+		display: block;
+	}
+	*.work-info, *.related-info
+	{
+		width: 100%;
+	}
+}
+
+
+*.profile-info
+{
+	flex-basis: 65%;
+}
+*.related-info
+{
+	flex-basis: 30%;
+}
+*.work-description
+{
+	flex-basis: 60%;
+}
+*.work-info
+{
+	flex-basis: 35%;
+}
+
+*.profile-bio > *:first-child, *.work-description > *:first-child > *:first-child
+{
+	margin-top: 0;
+}
+
+*.side-info
 {
 	padding: 1em;
-	height: 100%;
-	background-color: #fafafa;
+	background-color: #eee;
+	margin-bottom: 1em;
+}
+
+*.side-info > *:last-child
+{
+	margin-bottom: 0;
+}
+
+*.principal-image
+{
+	text-align: center;
+	background-color: #eee;
+	margin-bottom: 2em;
+}
+*.work-info table
+{
+	width: 100%;
+}
+*.work-info th, *.work-info td
+{
+	vertical-align: top;
+}
+*.body-content tr:last-of-type th, *.body-content tr:last-of-type td
+{
 	border: none;
 }
+*.work-info tr + tr
+{
+}
+
+*.profile-info *.profile-image
+{
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+*.side-info > ul
+{
+	padding-left: 1ex;
+}
+*.side-info > ul > li
+{
+	list-style-type: none;
+}
+
+*.featured-exhibits
+{
+}
+*.featured-works
+{
+}
+*.external-links
+{
+}
+
