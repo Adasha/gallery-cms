@@ -13,7 +13,7 @@
 				<div class="col-narrow">
 					<?php comments_template(); ?>
 				</div>
-				
+
 			</article>
 		<?php endwhile; ?>
 	</main>

@@ -19,7 +19,7 @@
 			<article id="entry-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
 				<?php if ( has_post_thumbnail() && !$suppress_thumbs_globally): ?>
 					<figure class="entry-thumb">
-						<a class="ci-lightbox" href="<?php echo esc_url( eclecticon_get_image_src( get_post_thumbnail_id(), 'large' ) ); ?>"><?php the_post_thumbnail( 'eclecticon_wide' ); ?></a>
+						<a class="ci-lightbox" href="<?php echo esc_url( wp_get_attachment_image_url( get_post_thumbnail_id(), 'large' ) ); ?>"><?php the_post_thumbnail( 'eclecticon_wide' ); ?></a>
 					</figure>
 				<?php endif; ?>
 
