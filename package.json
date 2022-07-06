@@ -1,0 +1,32 @@
+{
+  "name": "wp-art-cms",
+  "version": "0.1.5-alpha",
+  "description": "Wordpress plug-in. Adds custom page types, taxonomies and theming elements to suit managing a gallery or other exhibition.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adasha/gallery-cms.git"
+  },
+  "keywords": [
+    "Wordpress",
+    "gallery",
+    "exhibition",
+    "project",
+    "art",
+    "artist",
+    "collection"
+  ],
+  "author": "Adam Shailer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adasha/gallery-cms/issues"
+  },
+  "homepage": "https://github.com/Adasha/gallery-cms#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.53.0"
+  }
+}
