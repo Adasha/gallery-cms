@@ -28,5 +28,7 @@ node_modules/
 plugins/.DS_Store
 .DS_Store
 
-wp-content/themes/eclecticon
-wp-content/themes/eclecticon-child
+# Wordpress files
+www
+!www/wp-content/themes/gallery-child
+!www/wp-content/plugins/art-cms
