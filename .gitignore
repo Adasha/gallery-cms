@@ -28,5 +28,5 @@ node_modules/
 plugins/.DS_Store
 .DS_Store
 
-themes/eclecticon
-themes/eclecticon-child
+wp-content/themes/eclecticon
+wp-content/themes/eclecticon-child

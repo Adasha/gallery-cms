@@ -1,7 +1,7 @@
 <?php
 /*
 * Template Name: Fullwidth Page
-* Template Post Type: post, page, article, work, collection, profile, project
+* Template Post Type: post, page, article, work, collection, profile
 */
 ?>
 

@@ -1,10 +1,12 @@
 <?php
 /*
 * Template Name: Project Page
-* Template Post Type: page, article, collection, project
+* Template Post Type: page, article, collection
 */
 ?>
 <?php get_header(); ?>
+<?php $the_pod = pods( 'collection', get_the_ID() ); ?>
+
 
 <div class="content-wrap">
 	<main class="main main-fullwidth">
@@ -14,35 +16,50 @@
 				<div class="entry-project-side">
 					<h2 class="entry-title"><?php the_title(); ?></h2>
 
+
 					<div class="entry-meta">
 						<?php the_terms( get_the_ID(), 'collection_category' ); ?>
 					</div>
+					
+
+					<?php if ( $the_pod->field( 'standfirst' ) )
+					{ ?>
+						<div class="standfirst"><?php echo $the_pod->display( 'standfirst' ); ?></div>
+					<?php } ?>
+
 
 					<div class="entry-content">
-						<?php $the_pod = pods( 'collection', get_the_ID() ); ?>
+
 						<div>
 							<?php echo $the_pod->display( 'description' ); ?>
 						</div>
-						<dl class="web-link">
-							<?php
-								if ( $the_pod->field( 'website_url' ) )
+
+						<?php
+							if ( $the_pod->field( 'website_url' ) )
+							{
+								$the_url = $the_pod->display( 'website_url' );
+								if ( $the_pod->field( 'website_name' ) )
 								{
-									$the_url = $the_pod->display( 'website_url' );
-									if ( $the_pod->field( 'website_name' ) )
-									{
-										$the_webname = $the_pod->display( 'website_name' );
-									}
-									else
-									{
-										$the_webname = $the_pod->display( 'website_url' );
-									}
+									$the_webname = $the_pod->display( 'website_name' );
 								}
-							?>
+								else
+								{
+									$the_webname = $the_pod->display( 'website_url' );
+								}
+						?>
+						<dl class="web-link">
 							<dt>Website:</dt>
-							<dd>
+							<dd<?php if ( $the_pod->field( 'dead_link' ) ) echo ' style="text-decoration: line-through"' ?>>
 								<a href="<?php echo $the_url ?>" target="_blank" rel="noopener"><?php echo $the_webname; ?></a>
 							</dd>
 						</dl>
+						<?php } ?>
+
+						<?php if ( $the_pod->field( 'notes' ) )
+						{ ?>
+							<div class="footnote-content"><?php echo $the_pod->display( 'notes' );  ?></div>
+						<?php } ?>
+
 					</div>
 				</div>
 
