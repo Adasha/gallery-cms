@@ -29,6 +29,17 @@ plugins/.DS_Store
 .DS_Store
 
 # Wordpress files
-www
+www/*
+!www/wp-content
+www/wp-content/*
+
+!www/wp-content/themes
+www/wp-content/themes/*
 !www/wp-content/themes/gallery-child
+
+!www/wp-content/plugins
+www/wp-content/plugins/*
 !www/wp-content/plugins/art-cms
+
+
+
