@@ -1,96 +1,112 @@
 /*
-Theme Name: Eclecticon Child
-Theme URI: https://www.cssigniter.com/themes/eclecticon/
-Author: CSSIgniter
-Author URI: https://www.cssigniter.com/
-Description: Child theme for Eclecticon
-Version: 1.0
+Theme Name: Gallery Child
+Theme URI: http://lab.adasha.com/add-ons/wp-art-cms
+Author: adasha.com
+Author URI: http://www.adasha.com/
+Description: Art Gallery theme extension
+Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: eclecticon
-Text Domain: eclecticon-child
+Text Domain: gallery-child
 */
-/*
- * Add your custom styles below. The parent theme's styles are loaded automatically by default.
- * If you need to change this, see functions.php
+/**
+ * VARIABLES
  */
-*.mfp-title a {
+/**
+ * THEME ENHANCEMENTS
+ */
+.mfp-title a {
   color: #fff;
 }
 
-*.add-padding {
-  padding: 1em;
-}
-
-*.no-bullet {
-  list-type-style: none;
-}
-
-*.pull-up {
-  margin-bottom: 0;
-}
-
-*.no-para-spacing p {
-  margin-bottom: 0;
-}
-
-*.section-spacer {
-  height: 20px;
-}
-
+/* Blog post dividers */
 main article.category-news + article.category-news {
-  border-top: 1px dotted black;
+  border-top: 1px dotted #000;
   padding-top: 50px;
 }
 
+/* Project parts */
 p.item-title {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.666);
   width: min-content;
   padding: 5px;
 }
 
-p.item-title[style*="#000000"] {
-  background-color: white;
+/* Cover Image */
+.bottom-text .wp-block-cover__inner-container {
+  align-self: end;
+}
+.bottom-text .wp-block-cover__inner-container * {
+  margin-bottom: 0;
 }
 
-p.item-title[style*="#ffffff"] {
-  background-color: black;
-}
-
+/* Pretty website link */
 dl.web-link {
   margin: 2em 0;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   letter-spacing: -0.05em;
 }
-
-dl.web-link dt {
-  font-size: 9pt;
+dl.web-link > dt {
+  font-size: 9px;
   letter-spacing: -0.05em;
   color: #828282;
   font-weight: 400;
 }
-
-dl.web-link dd {
+dl.web-link > dd {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.125;
 }
-
 dl.web-link a {
   color: #820101;
   text-decoration: none;
 }
 
-/*
- * PODS TEMPLATE STYLES
+/**
+ * MISC CLASSES
  */
-*.taxonomy-list {
+.add-padding {
+  padding: 1em;
+}
+
+.remove-padding {
+  padding: 0 !important;
+}
+
+.pull-up {
+  margin-bottom: 0 !important;
+}
+
+.no-para-spacing p {
+  margin-bottom: 0;
+}
+
+.no-bullet {
+  list-type-style: none;
+}
+
+.section-spacer {
+  height: 20px;
+}
+
+figcaption {
+  margin-top: 1.5em;
+}
+
+.standfirst {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Taxonomy buttons */
+.taxonomy-list {
   margin-top: 0.2em;
   line-height: 2;
 }
-
-*.taxonomy-list > span {
+.taxonomy-list > span {
   background-color: #eee;
   margin-right: 8px;
   padding: 6px 8px;
@@ -99,19 +115,17 @@ dl.web-link a {
   color: #828282;
   text-transform: uppercase;
 }
-
-*.taxonomy-list > span > a {
+.taxonomy-list > span > a {
   color: inherit;
   text-decoration: none;
   margin-top: -6px -8px;
   transition: color 0.18s ease;
 }
-
-*.taxonomy-list > span > a:hover {
+.taxonomy-list > span > a:hover {
   color: #252525;
 }
 
-*.body-content {
+.body-content {
   display: flex;
   align-items: flex-start;
   align-content: space-between;
@@ -119,74 +133,81 @@ dl.web-link a {
   clear: left;
 }
 
-@media screen and (max-width: 640px) {
-  *.body-content {
-    display: block;
-  }
-  *.work-info, *.related-info {
-    width: 100%;
-  }
-}
-*.profile-info {
+.profile-info {
   flex-basis: 65%;
 }
 
-*.related-info {
+.related-info {
   flex-basis: 30%;
 }
 
-*.work-description {
+.work-description {
   flex-basis: 60%;
 }
 
-*.work-info {
+.work-info {
   flex-basis: 35%;
 }
 
-*.profile-bio > *:first-child, *.work-description > *:first-child > *:first-child {
+@media screen and (max-width: 640px) {
+  .body-content {
+    display: block;
+  }
+  .work-info, *.related-info {
+    width: 100%;
+  }
+}
+.profile-bio > *:first-child,
+.work-description > *:first-child > *:first-child {
   margin-top: 0;
 }
 
-*.side-info {
+.side-info {
   padding: 1em;
-  background-color: #eee;
+  background-color: #eeeeee;
   margin-bottom: 1em;
 }
-
-*.side-info > *:last-child {
+.side-info > *:last-child {
   margin-bottom: 0;
 }
 
-*.principal-image {
+.principal-image {
   text-align: center;
-  background-color: #eee;
+  background-color: #eeeeee;
   margin-bottom: 2em;
 }
 
-*.work-info table {
+.work-info table {
   width: 100%;
 }
-
-*.work-info th, *.work-info td {
+.work-info table th, .work-info table td {
   vertical-align: top;
 }
 
-*.body-content tr:last-of-type th, *.body-content tr:last-of-type td {
+.body-content tr:last-of-type th, .body-content tr:last-of-type td {
   border: none;
 }
 
-*.profile-info *.profile-image {
+.profile-info *.profile-image {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
 }
 
-*.side-info > ul {
+.side-info > ul {
   padding-left: 1ex;
 }
-
-*.side-info > ul > li {
+.side-info > ul > li {
   list-style-type: none;
+}
+
+.guest-header {
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+  padding: 10px 40px;
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
