@@ -30,7 +30,7 @@ plugins/.DS_Store
 
 # PHP devtools
 composer.phar
-
+vendor/
 
 # Wordpress files
 www/*
