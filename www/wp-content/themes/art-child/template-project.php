@@ -1,7 +1,7 @@
 <?php
 /*
 * Template Name: Project Page
-* Template Post Type: page, article, collection
+* Template Post Type: collection
 */
 ?>
 <?php get_header(); ?>

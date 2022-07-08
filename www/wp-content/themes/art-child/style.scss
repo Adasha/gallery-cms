@@ -8,7 +8,7 @@ Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: eclecticon
-Text Domain: gallery-child
+Text Domain: art-child
 */
 
 @import '../eclecticon/css/inc/variables';
@@ -32,31 +32,7 @@ $huge-text: 22px;
 
 
 
-/**
- * THEME ENHANCEMENTS
- */
 
-.mfp-title a
-{
-/*	color: $white;*/
-}
-
-
-
-/* Blog post dividers */
-main article.category-news + article.category-news {
-	border-top: 1px dotted $black;
-	padding-top: 50px;
-}
-
-
-
-/* Project parts */
-p.item-title {
-	background-color: rgba(255,255,255,0.666);
-	width: min-content;
-	padding: 5px;
-}
 
 
 

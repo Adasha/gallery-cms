@@ -4,12 +4,12 @@
   "description": "Wordpress plug-in. Adds custom page types, taxonomies and theming elements to suit managing a gallery or other exhibition.",
   "main": "index.js",
   "scripts": {
-    "build:css": "sass www/wp-content/themes/gallery-child/style.scss www/wp-content/themes/gallery-child/style.css",
+    "build:css": "sass www/wp-content/themes/art-child/style.scss www/wp-content/themes/art-child/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Adasha/gallery-cms.git"
+    "url": "git+https://github.com/Adasha/wp-art-cms.git"
   },
   "keywords": [
     "Wordpress",

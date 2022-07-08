@@ -39,7 +39,7 @@ www/wp-content/*
 
 !www/wp-content/themes
 www/wp-content/themes/*
-!www/wp-content/themes/gallery-child
+!www/wp-content/themes/art-child
 
 !www/wp-content/plugins
 www/wp-content/plugins/*
