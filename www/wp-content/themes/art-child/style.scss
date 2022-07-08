@@ -1,34 +1,18 @@
 /*
-Theme Name: Gallery Child
+Theme Name: Art CMS Child Theme
 Theme URI: http://lab.adasha.com/add-ons/wp-art-cms
 Author: adasha.com
 Author URI: http://www.adasha.com/
 Description: Art Gallery theme extension
-Version: 0.1
+Version: 0.2-alpha
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: eclecticon
 Text Domain: art-child
 */
 
-@import '../eclecticon/css/inc/variables';
+@use "css/variables" as *;
 
-/**
- * VARIABLES
- */
-
-$generic-padding: 1em;
-$headings-font: "Montserrat", sans-serif;
-$v-dark-grey: #121212;
-$dark-grey: #252525;
-$light-grey: #828282;
-$v-light-grey: #eeeeee;
-$dark-red: #380f0f;
-$tiny-text: 8px;
-$small-text: 9px;
-$mid-text: 16px;
-$big-text: 18px;
-$huge-text: 22px;
 
 
 

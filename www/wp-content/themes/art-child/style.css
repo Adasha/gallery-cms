@@ -1,18 +1,21 @@
+/**
+ * SCSS VARIABLES
+ */
+/* COLOURS */
+/* TYPEFACES */
+/* FONT SIZES */
 /*
-Theme Name: Gallery Child
+Theme Name: Art CMS Child Theme
 Theme URI: http://lab.adasha.com/add-ons/wp-art-cms
 Author: adasha.com
 Author URI: http://www.adasha.com/
 Description: Art Gallery theme extension
-Version: 0.1
+Version: 0.2-alpha
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: eclecticon
 Text Domain: art-child
 */
-/**
- * VARIABLES
- */
 /* Cover Image */
 .bottom-text .wp-block-cover__inner-container {
   align-self: end;
@@ -87,7 +90,7 @@ figcaption {
   line-height: 2;
 }
 .taxonomy-list > span {
-  background-color: #eeeeee;
+  background-color: #eee;
   margin-right: 8px;
   padding: 6px 8px;
   font-family: "Montserrat", sans-serif;
@@ -144,7 +147,7 @@ figcaption {
 
 .side-info {
   padding: 1em;
-  background-color: #eeeeee;
+  background-color: #eee;
   margin-bottom: 1em;
 }
 .side-info > *:last-child {
@@ -153,7 +156,7 @@ figcaption {
 
 .principal-image {
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #eee;
   margin-bottom: 2em;
 }
 
