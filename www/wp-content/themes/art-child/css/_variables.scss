@@ -1,24 +1,27 @@
-/**
- * SCSS VARIABLES
- */
+// *
+// SCSS VARIABLES
+// *
 
 
 
-/* COLOURS */
+/// Colours
 $black: #000;
 $v-dark-grey: #121212;
 $dark-grey: #252525;
-$light-grey: #828282;
-$v-light-grey: #eee;
+$mid-dark-grey: #4e4e4e;
+$mid-grey: #828282;
+$mid-light-grey: #9e9e9e;
+$light-grey: #c6c6c6;
+$v-light-grey: #ececec;
 $white: #fff;
 $dark-red: #380f0f;
 
 
-/* TYPEFACES */
+/// Typefaces
 $headings-font: "Montserrat", sans-serif;
 
 
-/* FONT SIZES */
+/// Font sizes
 $tiny-text: 8px;
 $small-text: 9px;
 $mid-text: 16px;
