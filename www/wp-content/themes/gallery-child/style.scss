@@ -18,15 +18,17 @@ Text Domain: gallery-child
  */
 
 $generic-padding: 1em;
-$primary-font: "Montserrat", sans-serif;
+$headings-font: "Montserrat", sans-serif;
 $v-dark-grey: #121212;
 $dark-grey: #252525;
 $light-grey: #828282;
 $v-light-grey: #eeeeee;
+$dark-red: #380f0f;
 $tiny-text: 8px;
 $small-text: 9px;
 $mid-text: 16px;
 $big-text: 18px;
+$huge-text: 22px;
 
 
 
@@ -36,7 +38,7 @@ $big-text: 18px;
 
 .mfp-title a
 {
-	color: $white;
+/*	color: $white;*/
 }
 
 
@@ -73,7 +75,7 @@ p.item-title {
 dl.web-link
 {
 	margin: 2em 0;
-	font-family: $primary-font;
+	font-family: $headings-font;
 	text-transform: uppercase;
 	letter-spacing: -0.05em;
 
@@ -91,7 +93,7 @@ dl.web-link
 	}
 
 	a {
-		color: #820101;
+		color: $dark-red;
 		text-decoration: none;
 	}
 }
@@ -146,10 +148,10 @@ figcaption {
 	line-height: 2;
 
 	> span {
-		background-color: #eee;
+		background-color: $v-light-grey;
 		margin-right: 8px;
 		padding: 6px 8px;
-		font-family: "Montserrat", sans-serif;
+		font-family: $headings-font;
 		font-size: 8pt;
 		color: $light-grey;
 		text-transform: uppercase;
@@ -250,11 +252,10 @@ figcaption {
 
 
 
-.guest-header
-{
-	background-color: #000;
-	color: #fff;
-	font-size: 18px;
+.guest-header {
+	background-color: $black;
+	color: $white;
+	font-size: $big-text;
 	font-style: italic;
 	padding: 10px 40px;
 	margin-bottom: 0;

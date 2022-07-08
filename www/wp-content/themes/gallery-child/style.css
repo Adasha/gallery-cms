@@ -60,7 +60,7 @@ dl.web-link > dd {
   line-height: 1.125;
 }
 dl.web-link a {
-  color: #820101;
+  color: #311212;
   text-decoration: none;
 }
 
@@ -107,7 +107,7 @@ figcaption {
   line-height: 2;
 }
 .taxonomy-list > span {
-  background-color: #eee;
+  background-color: #eeeeee;
   margin-right: 8px;
   padding: 6px 8px;
   font-family: "Montserrat", sans-serif;

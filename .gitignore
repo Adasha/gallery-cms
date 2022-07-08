@@ -28,6 +28,10 @@ node_modules/
 plugins/.DS_Store
 .DS_Store
 
+# PHP devtools
+composer.phar
+
+
 # Wordpress files
 www/*
 !www/wp-content
