@@ -1,3 +1,6 @@
+## THIS PROJECT IS MOVING
+wp-art-cms has a new name, Galerio. This repository will not be updated other than to point to the new Github page once it's ready.
+
 ## README
 
 A plugin for Wordpress that adds content types, templates and blocks to suit an art gallery or other place that presents works.
